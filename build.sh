@@ -1,0 +1,1 @@
+docker compose --profile auto-api up --build
