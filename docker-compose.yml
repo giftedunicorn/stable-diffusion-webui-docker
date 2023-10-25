@@ -33,11 +33,10 @@ services:
     environment:
       - CLI_ARGS=--allow-code --medvram --xformers --enable-insecure-extension-access --api
 
-  auto-api: &automatic
-    <<: *base_service
-    profiles: ["auto"]
-    build: ./services/AUTOMATIC1111
-    image: sd-auto:67
+  auto-api:
+    <<: *automatic
+    profiles: ["auto-api"]
+    deploy: {}
     environment:
       - CLI_ARGS=--xformers --enable-insecure-extension-access --nowebui
 
